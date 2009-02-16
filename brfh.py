@@ -68,9 +68,9 @@ class BatchRename:
 			dlg.run()
 			dlg.destroy()
 			self.new_filename_label.set_text('Coloca o novo nome aí do lado...')
-		else:	
+		else:
 			files_to_change = self.FileChooser.get_filenames()
-			if len(files_to_change) >= 1: #Se nenhum arquivo estiver selecionado, não vai rodar. Assim evito erros do tipo 'no such file or directory'
+			if files_to_change:#Se nenhum arquivo estiver selecionado, não vai rodar. Assim evito erros do tipo 'no such file or directory'
 				response = self.showWarningDlg(len(files_to_change)) #Mostra o diálogo de aviso, e espera a resposta do usuário: 
 				if response == gtk.RESPONSE_OK: #só vai renomear se for OK.
 					count = 1
